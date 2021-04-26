@@ -5,7 +5,7 @@ module GoodJob
 
     initializer "good_job.logger" do |_app|
       ActiveSupport.on_load(:good_job) do
-        self.logger = ::Rails.logger
+        GoodJob.logger = ::Rails.logger
       end
       GoodJob::LogSubscriber.attach_to :good_job
     end
